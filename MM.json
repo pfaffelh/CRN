@@ -1,0 +1,65 @@
+{
+    "name": "Michaelis-Menten-Network",
+    "species": [
+        "S0",
+        "S1",
+        "E0",
+        "E1"
+    ],
+    "reactions": [
+        {
+            "name": "1",
+            "educts": [
+                {
+                    "S0": 1
+                },
+                {
+                    "E0": 1
+                }
+            ],
+            "products": [
+                {
+                    "E1": 1
+                }
+            ],
+            "rate_unscaled": "k1",
+            "scaling": "g1"
+        },
+        {
+            "name": "2",
+            "educts": [
+                {
+                    "E1": 1
+                }
+            ],
+            "products": [
+                {
+                    "S0": 1
+                },
+                {
+                    "E0": 1
+                }
+            ],
+            "rate_unscaled": "k2",
+            "scaling": "g2"
+        },
+        {
+            "name": "3",
+            "educts": [
+                {
+                    "E1": 1
+                }
+            ],
+            "products": [
+                {
+                    "E0": 1
+                },
+                {
+                    "S1": 1
+                }
+            ],
+            "rate_unscaled": "k3",
+            "scaling": "g3"
+        }
+    ]
+}
