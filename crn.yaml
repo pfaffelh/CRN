@@ -1,0 +1,36 @@
+name: Michaelis-Menten CRN
+
+natnum: N
+
+species:
+  slow:
+    - S
+    - PP
+  fast:
+    - E
+    - ES
+
+reactions:
+  - educts:
+      E: 1
+      S: 44
+    products:
+      ES: 1
+    rate: k1
+    scale: b1
+
+  - educts:
+      ES: 1
+    products:
+      E: 1
+      S: 1
+    rate: k2
+    scale: b2
+
+  - educts:
+      ES: 1
+    products:
+      E: 1
+      P: 1
+    rate: k3
+    scale: b3
