@@ -1,0 +1,139 @@
+name: Kang & Kurtz with 8 fast species
+
+natnum: N
+
+species:
+  slow:
+    - S1
+    - S2
+  fast:
+    - E1
+    - E2
+    - E3
+    - E4
+    - E5
+    - E6
+    - E7
+    - E8
+    - E9
+    - E10
+
+reactions:
+  - educts:
+      S1: 1
+    products:
+      E1: 1
+    rate: k0
+    scale: "0"
+    
+  - educts:
+      E1: 1
+    products:
+      S1: 1
+    rate: k1
+    scale: b1
+    
+  - educts:
+      E1: 1
+    products:
+      E2: 1
+    rate: k2
+    scale: b1
+    
+  - educts:
+      E2: 1
+    products:
+      E1: 1
+    rate: k3
+    scale: b2
+    
+  - educts:
+      E2: 1
+    products:
+      E3: 1
+    rate: k4
+    scale: b2
+
+  - educts:
+      E3: 1
+    products:
+      E2: 1
+    rate: k5
+    scale: b3
+
+  - educts:
+      E3: 1
+    products:
+      E4: 1
+    rate: k6
+    scale: b3
+    
+  - educts:
+      E4: 1
+    products:
+      E3: 1
+    rate: k7
+    scale: b4
+
+  - educts:
+      E4: 1
+    products:
+      E5: 1
+    rate: k8
+    scale: b4
+    
+  - educts:
+      E5: 1
+    products:
+      E4: 1
+    rate: k9
+    scale: b4
+
+  - educts:
+      E5: 1
+    products:
+      E6: 1
+    rate: k10
+    scale: b5
+    
+  - educts:
+      E6: 1
+    products:
+      E5: 1
+    rate: k11
+    scale: b5
+    
+  - educts:
+      E6: 1
+    products:
+      E7: 1
+    rate: k12
+    scale: b6
+    
+  - educts:
+      E7: 1
+    products:
+      E6: 1
+    rate: k13
+    scale: b6
+    
+  - educts:
+      E7: 1
+    products:
+      E8: 1
+    rate: k14
+    scale: b7
+    
+  - educts:
+      E8: 1
+    products:
+      E7: 1
+    rate: k15
+    scale: b7
+    
+  - educts:
+      E8: 1
+    products:
+      S2: 1
+    rate: k16
+    scale: b8

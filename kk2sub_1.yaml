@@ -1,0 +1,40 @@
+name: Kang & Kurtz with 2 fast species_sub_1
+natnum: N
+reactions:
+- educts:
+    S1: 1
+  products:
+    E1: 1
+  rate: k0
+  scale: '0'
+- educts:
+    E1: 1
+  products:
+    S1: 1
+  rate: k1
+  scale: b1
+- educts:
+    E1: 1
+  products:
+    E2: 1
+  rate: k2
+  scale: b1
+- educts:
+    E2: 1
+  products:
+    E1: 1
+  rate: k3
+  scale: b2
+- educts:
+    E2: 1
+  products:
+    S2: 1
+  rate: k4
+  scale: b2
+species:
+  fast:
+  - E1
+  - E2
+  slow:
+  - S1
+  - S2

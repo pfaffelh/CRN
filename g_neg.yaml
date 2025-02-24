@@ -1,0 +1,59 @@
+name: Gene expression with negative feedback
+
+natnum: N
+
+species:
+  slow:
+    - P
+  fast:
+    - off_
+    - on_
+    - R
+    - empty
+
+reactions:
+  - educts:
+      off_: 1
+    products:
+      on_: 1
+    rate: k1_plus
+    scale: "1"
+    
+  - educts:
+      on_: 1
+      P: 1
+    products:
+      off_: 1
+      P: 1
+    rate: k1_ominus
+    scale: "0"
+    
+  - educts:
+      on_: 1
+    products:
+      on_: 1
+      R: 1
+    rate: k2
+    scale: "1"
+    
+  - educts:
+      R: 1
+    products:
+      empty: 1
+    rate: nu2
+    scale: "1"
+    
+  - educts:
+      R: 1
+    products:
+      R: 1
+      P: 1
+    rate: k3
+    scale: "1"
+    
+  - educts:
+      P: 1
+    products:
+      empty: 1
+    rate: nu3
+    scale: "0"

@@ -1,0 +1,28 @@
+name: Gene expression with neutral feedback_sub_1
+natnum: N
+reactions:
+- educts:
+    off_: 1
+  products:
+    on_: 1
+  rate: k1_plus
+  scale: '1'
+- educts:
+    on_: 1
+  products:
+    off_: 1
+  rate: k1_minus
+  scale: '1'
+- educts:
+    on_: 1
+  products:
+    R: 1
+    on_: 1
+  rate: k2
+  scale: '1'
+species:
+  fast:
+  - off_
+  - on_
+  - R
+  slow: []

@@ -1,0 +1,94 @@
+name: Enzymkaskade mit Endumwandlung
+
+natnum: N
+
+species:
+  slow:
+    - S1
+    - S2
+    - S3
+    - S4
+    - P
+  fast:
+    - E1
+    - E2
+    - E3
+    - E4
+    - E1S1
+    - E2S2
+    - E3S3
+    - E4S4
+
+reactions:
+  # Enzymatische Aktivierungskaskade
+  - educts:
+      S1: 1
+      E1: 1
+    products:
+      E1S1: 1
+    rate: k1
+    scale: b1
+
+  - educts:
+      E1S1: 1
+    products:
+      S2: 1
+      E1: 1
+    rate: k2
+    scale: b1
+
+  - educts:
+      S2: 1
+      E2: 1
+    products:
+      E2S2: 1
+    rate: k3
+    scale: b2
+
+  - educts:
+      E2S2: 1
+    products:
+      S3: 1
+      E2: 1
+    rate: k4
+    scale: b2
+
+  - educts:
+      S3: 1
+      E3: 1
+    products:
+      E3S3: 1
+    rate: k5
+    scale: b3
+
+  - educts:
+      E3S3: 1
+    products:
+      S4: 1
+      E3: 1
+    rate: k6
+    scale: b3
+
+  - educts:
+      S4: 1
+      E4: 1
+    products:
+      E4S4: 1
+    rate: k7
+    scale: b4
+
+  - educts:
+      E4S4: 1
+    products:
+      S4: 1
+      E4: 1
+    rate: k8
+    scale: b4
+
+  # Langsame Endumwandlung von S4 zu P
+  - educts:
+      S4: 1
+    products:
+      P: 1
+    rate: k_slow
+    scale: "0"
